@@ -1,7 +1,7 @@
 #include <gmp.h>
 #include <stdio.h>
 
-int main(int argc, char **argv)
+int main(__attribute__((unused)) int argc, char **argv)
 {
 	mpz_t num, head, median, rem;
 	mpz_init(num);
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	while (getline(&num_buf, &n, fp) != -1)
 	{
 		mpz_set_str(num, num_buf, 10);
-		mpz_div_ui(median, num, 2);
+		mpz_sqrt(median, num);
 		mpz_add_ui(median, median, 1);
 		if (mpz_mod_ui(head, num, 2) == 0)
 			mpz_set_ui(head, 2);
