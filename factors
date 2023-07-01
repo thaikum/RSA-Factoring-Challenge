@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+import sys
+file_name: str = sys.argv[1]
+
+with open(file_name) as f:
+    lines = f.readlines()
+    for line in lines:
+        num = int(line)
+        median = int(num / 2) + 1
+
+        for div in range(2, median):
+            if (num % div == 0):
+                print(f"{num}={int(num/div)}*{div}")
+                break
