@@ -7,10 +7,10 @@ with open(file_name) as f:
     for line in lines:
         num: int = int(line)
         median: int = int(num / 2) + 1
-        start: int = 2 if (num % 2 == 0) else 3
+        div: int = 2 if (num % 2 == 0) else 3
 
-        while start <= median:
+        while div <= median:
             if (num % div == 0):
                 print(f"{num}={int(num/div)}*{div}")
                 break
-            start += 2
+            div += 2
